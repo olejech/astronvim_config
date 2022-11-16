@@ -94,9 +94,9 @@ local config = {
           "scss",
         },
       },
-      tsserver = {
-        on_attach = function(client, bufnr) client.server_capabilities.documentFormattingProvider = false end,
-      },
+      -- tsserver = {
+      --   on_attach = function(client, bufnr) client.server_capabilities.documentFormattingProvider = false end,
+      -- },
     },
   },
 
@@ -106,8 +106,10 @@ local config = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+      ["<leader>j"] = { "o<ESC>", desc = "Insert new line below" },
+      ["<leader>k"] = { "O<ESC>", desc = "Insert new line above" },
       -- quick save
-      -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+      -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     },
   },
 
@@ -120,7 +122,7 @@ local config = {
     ["neo-tree"] = {
       filesystem = {
         filtered_items = {
-          hide_dotfiles = false,
+          visible = true,
         },
       },
     },
@@ -128,12 +130,10 @@ local config = {
       local null_ls = require "null-ls"
 
       config.sources = {
-        -- Set a formatters
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.prettierd,
-        -- Set a linters
+        null_ls.builtins.formatting.eslint_d,
         null_ls.builtins.diagnostics.eslint_d,
-        -- Set code actions
         null_ls.builtins.code_actions.eslint_d,
       }
       return config
@@ -159,6 +159,19 @@ local config = {
           file_icon = false,
         },
       }
+      return config
+    end,
+    telescope = {
+      pickers = {
+        find_files = {
+          hidden = true,
+          file_ignore_patterns = { ".git/", "index.ts" },
+        },
+      },
+    },
+    alpha = function(config)
+      table.insert(config.layout[4].val, 1, astronvim.alpha_button("LDR S f", "  Sessions"))
+
       return config
     end,
   },
