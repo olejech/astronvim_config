@@ -98,6 +98,12 @@ local config = {
       --   on_attach = function(client, bufnr) client.server_capabilities.documentFormattingProvider = false end,
       -- },
     },
+    mappings = {
+      n = {
+        ["<leader>lr"] = { function() require("telescope.builtin").lsp_references() end, desc = "Telescope references" },
+        ["<leader>lR"] = { function() vim.lsp.buf.rename() end, desc = "Rename current symbol" },
+      },
+    },
   },
 
   mappings = {
@@ -108,6 +114,9 @@ local config = {
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       ["<leader>j"] = { "o<ESC>", desc = "Insert new line below" },
       ["<leader>k"] = { "O<ESC>", desc = "Insert new line above" },
+      ["<leader>js"] = { "<cmd>JestSingle<cr>", desc = "Jest single" },
+      ["<leader>ja"] = { "<cmd>Jest<cr>", desc = "Jest all" },
+      ["<leader>jf"] = { "<cmd>JestFile<cr>", desc = "Jest file" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     },
@@ -117,6 +126,14 @@ local config = {
     init = {
       {
         "savq/melange",
+      },
+      {
+        "mattkubej/jest.nvim",
+        config = function()
+          require("nvim-jest").setup {
+            jest_cmd = "yarn test",
+          }
+        end,
       },
     },
     ["neo-tree"] = {
@@ -190,6 +207,7 @@ local config = {
       n = {
         ["<leader>"] = {
           ["b"] = { name = "Buffer" },
+          ["j"] = { name = "Jest" },
         },
       },
     },
