@@ -140,6 +140,12 @@ local config = {
           visible = true,
         },
       },
+      window = {
+        mappings = {
+          ["/"] = "noop",
+          ["g/"] = "fuzzy_finder",
+        },
+      },
     },
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       local null_ls = require "null-ls"
