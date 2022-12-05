@@ -115,8 +115,10 @@ local config = {
       ["<leader>js"] = { "<cmd>JestSingle<cr>", desc = "Jest single" },
       ["<leader>ja"] = { "<cmd>Jest<cr>", desc = "Jest all" },
       ["<leader>jf"] = { "<cmd>JestFile<cr>", desc = "Jest file" },
-      -- quick save
-      -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+      ["<leader>ll"] = {
+        "\"ayiwoconsole.log('<c-r>=expand('%:t:r')<cr> —> <C-R>a:', <C-R>a);<Esc>",
+        desc = "Console log",
+      },
     },
   },
 
@@ -139,11 +141,11 @@ local config = {
         filtered_items = {
           visible = true,
         },
-      },
-      window = {
-        mappings = {
-          ["/"] = "noop",
-          ["g/"] = "fuzzy_finder",
+        window = {
+          mappings = {
+            ["/"] = "noop",
+            ["g/"] = "fuzzy_finder",
+          },
         },
       },
     },
@@ -186,7 +188,10 @@ local config = {
       pickers = {
         find_files = {
           hidden = true,
-          file_ignore_patterns = { ".git/", "index.ts" },
+          file_ignore_patterns = { ".git/", "index.ts", "%.lock" },
+        },
+        live_grep = {
+          file_ignore_patterns = { ".git/", "%.lock", "%.svg" },
         },
       },
     },
