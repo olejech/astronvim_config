@@ -197,6 +197,11 @@ local config = {
 
       return config
     end,
+    bufferline = {
+      options = {
+        sort_by = "insert_after_current",
+      },
+    },
   },
 
   cmp = {
