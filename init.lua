@@ -138,9 +138,6 @@ local config = {
     },
     ["neo-tree"] = {
       filesystem = {
-        filtered_items = {
-          visible = true,
-        },
         window = {
           mappings = {
             ["/"] = "noop",
