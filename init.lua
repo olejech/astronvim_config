@@ -12,7 +12,8 @@ local config = {
     auto_quit = false, -- automatically quit the current session after a successful update
   },
 
-  colorscheme = "melange",
+  -- colorscheme = "melange",
+  colorscheme = "everforest",
 
   options = {
     opt = {
@@ -30,6 +31,8 @@ local config = {
       diagnostics_enabled = true, -- enable diagnostics at start
       status_diagnostics_enabled = true, -- enable diagnostics in statusline
       icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
+      everforest_background = "hard",
+      everforest_better_performance = 1,
     },
   },
 
@@ -124,8 +127,11 @@ local config = {
 
   plugins = {
     init = {
+      -- {
+      --   "savq/melange",
+      -- },
       {
-        "savq/melange",
+        "sainnhe/everforest",
       },
       {
         "mattkubej/jest.nvim",
