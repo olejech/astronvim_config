@@ -173,6 +173,9 @@ local config = {
       rainbow = {
         enable = false,
       },
+      indent = {
+        enable = true,
+      },
     },
     heirline = function(config)
       config[2] = {
