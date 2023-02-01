@@ -12,8 +12,7 @@ local config = {
     auto_quit = false, -- automatically quit the current session after a successful update
   },
 
-  -- colorscheme = "melange",
-  colorscheme = "everforest",
+  colorscheme = "gruvbox-material",
 
   options = {
     opt = {
@@ -31,8 +30,6 @@ local config = {
       diagnostics_enabled = true, -- enable diagnostics at start
       status_diagnostics_enabled = true, -- enable diagnostics in statusline
       icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
-      everforest_background = "hard",
-      everforest_better_performance = 1,
     },
   },
 
@@ -127,11 +124,8 @@ local config = {
 
   plugins = {
     init = {
-      -- {
-      --   "savq/melange",
-      -- },
       {
-        "sainnhe/everforest",
+        "sainnhe/gruvbox-material",
       },
       {
         "mattkubej/jest.nvim",
@@ -142,13 +136,6 @@ local config = {
         end,
       },
       {
-        "ray-x/lsp_signature.nvim",
-        event = "BufRead",
-        config = function()
-          require("lsp_signature").setup {
-            hint_enable = false,
-          }
-        end,
       },
     },
     ["neo-tree"] = {
