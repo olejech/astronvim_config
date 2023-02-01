@@ -200,6 +200,9 @@ local config = {
         live_grep = {
           file_ignore_patterns = { ".git/", "%.lock", "%.svg" },
         },
+        lsp_definitions = {
+          file_ignore_patterns = { "index.d.ts" },
+        },
       },
     },
     alpha = function(config)
