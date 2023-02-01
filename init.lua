@@ -212,7 +212,7 @@ local config = {
     end,
     bufferline = {
       options = {
-        sort_by = "insert_at_end",
+        sort_by = "id",
         diagnostics = "nvim_lsp",
         diagnostics_update_in_insert = false,
       },
