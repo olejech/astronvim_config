@@ -119,6 +119,7 @@ local config = {
         "\"ayiwoconsole.log('<c-r>=expand('%:t:r')<cr> —> <C-R>a:', <C-R>a);<Esc>",
         desc = "Console log",
       },
+      ["<leader>to"] = { "<cmd>MindOpenProject global<cr>", desc = "Open todos" },
     },
   },
 
@@ -136,6 +137,10 @@ local config = {
         end,
       },
       {
+        "phaazon/mind.nvim",
+        branch = "v2.2",
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function() require("mind").setup() end,
       },
     },
     ["neo-tree"] = {
@@ -148,7 +153,7 @@ local config = {
         },
       },
     },
-    ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
+    ["null-ls"] = function(config)
       local null_ls = require "null-ls"
 
       config.sources = {
