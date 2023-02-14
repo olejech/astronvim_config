@@ -120,6 +120,7 @@ local config = {
         desc = "Console log",
       },
       ["<leader>to"] = { "<cmd>MindOpenProject global<cr>", desc = "Open todos" },
+      ["<leader>gb"] = { "<cmd>Telescope git_bcommits<cr>", desc = "Commits buffer" },
     },
   },
 
