@@ -1,6 +1,6 @@
 return {
   "phaazon/mind.nvim",
+  lazy = false,
   branch = "v2.2",
-  requires = { "nvim-lua/plenary.nvim" },
-  config = function() require("mind").setup() end,
+  opts = function() require("mind").setup() end,
 }
