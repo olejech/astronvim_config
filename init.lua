@@ -18,7 +18,10 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "gruvbox-material",
+  -- colorscheme = "kanagawa",
+  -- colorscheme = "onigiri", -- cool
+  -- colorscheme = "gruvbox-material",
+  colorscheme = "nordfox",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
