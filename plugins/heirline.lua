@@ -14,6 +14,10 @@ return {
         file_icon = false,
       },
     }
+    opts.statusline = {
+      status.component.git_branch(),
+      status.component.diagnostics(),
+    }
     return opts
   end,
 }
