@@ -15,8 +15,10 @@ return {
       },
     }
     opts.statusline = {
+      hl = { bg = "#222732" },
       status.component.git_branch(),
       status.component.diagnostics(),
+      status.component.cmd_info(),
     }
     return opts
   end,
