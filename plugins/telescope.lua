@@ -9,6 +9,9 @@ return {
         hidden = true,
         file_ignore_patterns = { ".git/", "index.ts", "%.lock" },
       },
+      lsp_references = {
+        show_line = false,
+      },
       live_grep = {
         file_ignore_patterns = { ".git/", "%.lock", "%.svg" },
       },
