@@ -42,4 +42,21 @@ return {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  i = {
+    ["<C-c>["] = {
+      function() return vim.fn["codeium#CycleCompletions"](-1) end,
+      desc = "Prev suggestion Codeium",
+      expr = true,
+    },
+    ["<C-c>]"] = {
+      function() return vim.fn["codeium#CycleCompletions"](1) end,
+      desc = "Next suggestion Codeium",
+      expr = true,
+    },
+    ["<C-c><CR>"] = {
+      function() return vim.fn["codeium#Accept"]() end,
+      desc = "Apply suggestion Codeium",
+      expr = true,
+    },
+  },
 }
