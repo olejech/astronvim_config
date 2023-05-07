@@ -37,6 +37,10 @@ return {
     },
     ["<leader>to"] = { "<cmd>MindOpenProject global<cr>", desc = "Open todos" },
     ["<leader>gb"] = { "<cmd>Telescope git_bcommits<cr>", desc = "Commits buffer" },
+    ["<C-s>k"] = { "<cmd>resize -10<cr>", desc = "Resize split up" },
+    ["<C-s>j"] = { "<cmd>resize +10<cr>", desc = "Resize split down" },
+    ["<C-s>h"] = { function() require("smart-splits").resize_left(20) end, desc = "Resize split left" },
+    ["<C-s>l"] = { function() require("smart-splits").resize_right(20) end, desc = "Resize split right" },
   },
   t = {
     -- setting a mapping to false will disable it
